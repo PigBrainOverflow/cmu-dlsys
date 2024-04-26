@@ -1,0 +1,9 @@
+1.
+low-level implementation (C++, CUDA): add, multiply, etc.
+high-level implementation (Python): broadcast, transpose, etc.
+
+2.
+Attributes are preceded with underscores.
+
+3.
+array[i, j] = handle[offset + strides[0] * i + strides[1] * j]

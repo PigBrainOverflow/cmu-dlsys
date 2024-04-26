@@ -1,0 +1,23 @@
+1.
+Value is a node in graph, more than a value (a scalar or array).
+One of its derived classes is Tensor.
+Every value has at most an op and several inputs which are also values.
+Ops are like functors, normally they don't store any data, can be implemented as flyweight pattern, except that they have extra data.
+
+2.
+calling sequence: Tensor.__add__() -> EWiseAdd/TensorOp.__call__() -> Tensor.make_from_op()
+make_from_op() is a static method as a factory.
+
+3.
+Differences between @staticmethod and @classmethod:
+If you need to deal with some derived classes separately, use @classmethod to capture its actual subclass.
+
+4.
+Use __new__() instead of C() when you don't need __init__() called automatically.
+
+5.
+Lazy Mode: compute data only when needed.
+Eager Mode: compute data as early as possible, often with constructing the computational graph.
+
+6.
+gradient() method of TensorOp returns a new Tensor (node) in computational graph.

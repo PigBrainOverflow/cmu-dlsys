@@ -1,0 +1,2 @@
+1.
+pytorch construct a new computational graph each forward and backward epoch called dynamical constructing, while Tensorflow does in a static approach.
